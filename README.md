@@ -1,7 +1,7 @@
 # Exercices 
 
 
-Cloner le repository ou télécharger son contenu en zip et extraire les données.
+Clonez le repository ou téléchargez son contenu en zip et extraire les données.
 
 
 
