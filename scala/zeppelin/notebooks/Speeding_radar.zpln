@@ -1,0 +1,392 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "/*\nFROM: https://github.com/lanastazia/homework/tree/master/backend/scala/exercices/2-radar\n\nAutomated Speed Processing System\n\nDescription of the program\n\nYou need to detect speeding vehicles by calculating their average speeds between two snapshots taken on a road. Your program must determine which vehicles are in violation and return a list of tickets containing the vehicle registration, the mileage at which the violation was detected, and the calculated average speed (rounded up).\n\nThe input data contains all time-stamped records for each license plate detected. All records are grouped by license plate and the camera distances are sorted in ascending order within this group.\n\nResolution\n\nCreate a program (executable manually or via an automated test set) in src/main/scala.\n\nTest sets as json files are in: /scala/zeppelin/data/\n\n\n\n\n\n\n\n\nA. Mirre\n\n*/",
+      "user": "anonymous",
+      "dateUpdated": "2021-06-02T01:28:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597331025_1174947500",
+      "id": "paragraph_1622559652340_1264960179",
+      "dateCreated": "2021-06-02T01:28:51+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:440",
+      "dateFinished": "2021-06-02T01:28:57+0000",
+      "dateStarted": "2021-06-02T01:28:56+0000"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597854270_740193584",
+      "id": "paragraph_1622597854270_740193584",
+      "dateCreated": "2021-06-02T01:37:34+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:1403",
+      "text": "import org.apache.spark.sql.types._\nimport org.apache.spark.sql.expressions._",
+      "dateUpdated": "2021-06-02T01:38:37+0000"
+    },
+    {
+      "text": "val df_test = spark.read\n      .option(\"inferSchema\", \"true\")\n      .format(\"json\")\n      .load(\"/usr/zeppelin/data/input1.json\")\ndf_test.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2021-06-02T01:29:01+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- maxspeed: long (nullable = true)\n |-- milepost: long (nullable = true)\n |-- numberplate: string (nullable = true)\n |-- timestamp: long (nullable = true)\n\n\u001b[1m\u001b[34mdf_test\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [maxspeed: bigint, milepost: bigint ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=270",
+              "$$hashKey": "object:1045"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597331025_1453990122",
+      "id": "paragraph_1622561671310_1936168733",
+      "dateCreated": "2021-06-02T01:28:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:441",
+      "dateFinished": "2021-06-02T01:29:02+0000",
+      "dateStarted": "2021-06-02T01:29:01+0000"
+    },
+    {
+      "text": "val rawSchema = new StructType()\n    .add(\"maxspeed\", LongType)\n    .add(\"numberplate\", StringType)\n    .add(\"milepost\", LongType)\n    .add(\"timestamp\", LongType)",
+      "user": "anonymous",
+      "dateUpdated": "2021-06-02T01:37:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types._\n\u001b[1m\u001b[34mrawSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m = StructType(StructField(maxspeed,LongType,true), StructField(numberplate,StringType,true), StructField(milepost,LongType,true), StructField(timestamp,LongType,true))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597331026_90894220",
+      "id": "paragraph_1622563401636_556229739",
+      "dateCreated": "2021-06-02T01:28:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:442",
+      "dateFinished": "2021-06-02T01:29:08+0000",
+      "dateStarted": "2021-06-02T01:29:07+0000"
+    },
+    {
+      "text": "val df1 = spark.read\n      .schema(rawSchema)\n      .format(\"json\")\n      .load(\"/usr/zeppelin/data/input1.json\")\n      \nval df2 = spark.read\n      .schema(rawSchema)\n      .format(\"json\")\n      .load(\"/usr/zeppelin/data/input2.json\")   \n      \nval df3 = spark.read\n      .schema(rawSchema)\n      .format(\"json\")\n      .load(\"/usr/zeppelin/data/input3.json\")\ndf1.show()\ndf2.show()\ndf3.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-06-02T01:36:20+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-----------+--------+----------+\n|maxspeed|numberplate|milepost| timestamp|\n+--------+-----------+--------+----------+\n|     100|     SKRD94|     175|1447411532|\n|     100|     SKRD94|     275|1447415132|\n|     100|     ZBZJ42|      75|1447418732|\n|     100|     ZBZJ42|     175|1447422333|\n|     100|     ZBZJ42|     275|1447425932|\n+--------+-----------+--------+----------+\n\n+--------+-----------+--------+----------+\n|maxspeed|numberplate|milepost| timestamp|\n+--------+-----------+--------+----------+\n|      60|     RSWJ98|     152|1447416000|\n|      60|     RSWJ98|     199|1447419600|\n|      60|     RSWJ98|     247|1447423200|\n|      60|     RSWJ98|     295|1447426800|\n+--------+-----------+--------+----------+\n\n+--------+-----------+--------+----------+\n|maxspeed|numberplate|milepost| timestamp|\n+--------+-----------+--------+----------+\n|      90|     PAZD54|      50|1447413071|\n|      90|     PAZD54|     150|1447416671|\n|      90|     PAZD54|     250|1447420211|\n|      90|     DJSS87|      50|1447408801|\n|      90|     DJSS87|     150|1447417501|\n|      90|     DJSS87|     250|1447421101|\n|      90|     LSKD97|      50|1447417436|\n|      90|     LSKD97|     150|1447424636|\n|      90|     LSKD97|     250|1447431836|\n+--------+-----------+--------+----------+\n\n\u001b[1m\u001b[34mdf1\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [maxspeed: bigint, numberplate: string ... 2 more fields]\n\u001b[1m\u001b[34mdf2\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [maxspeed: bigint, numberplate: string ... 2 more fields]\n\u001b[1m\u001b[34mdf3\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [maxspeed: bigint, numberplate: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=277",
+              "$$hashKey": "object:1338"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=278",
+              "$$hashKey": "object:1339"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=279",
+              "$$hashKey": "object:1340"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597331026_2131287177",
+      "id": "paragraph_1622561740679_1620081430",
+      "dateCreated": "2021-06-02T01:28:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:443",
+      "dateFinished": "2021-06-02T01:36:21+0000",
+      "dateStarted": "2021-06-02T01:36:20+0000"
+    },
+    {
+      "text": "val windowSpec = Window.partitionBy(\"numberplate\").orderBy(\"timestamp\")\n\ndf1.withColumn(\"speed\", ceil(($\"milepost\" - when((lag(\"milepost\", 1).over(windowSpec)).isNull, 0).otherwise(lag(\"milepost\", 1).over(windowSpec)))/\n                        (($\"timestamp\" - when((lag(\"timestamp\", 1).over(windowSpec)).isNull, 0).otherwise(lag(\"timestamp\", 1).over(windowSpec)))/3600)))\n    .withColumn(\"carSpeeding\", $\"speed\" > $\"maxspeed\")\n    .where($\"carSpeeding\" === true)\n    .drop(\"carSpeeding\")\n    .drop(\"maxspeed\")\n    .drop(\"timestamp\")\n    .show()\n    \ndf2.withColumn(\"speed\", ceil(($\"milepost\" - when((lag(\"milepost\", 1).over(windowSpec)).isNull, 0).otherwise(lag(\"milepost\", 1).over(windowSpec)))/\n                        (($\"timestamp\" - when((lag(\"timestamp\", 1).over(windowSpec)).isNull, 0).otherwise(lag(\"timestamp\", 1).over(windowSpec)))/3600)))\n    .withColumn(\"carSpeeding\", $\"speed\" > $\"maxspeed\")\n    .where($\"carSpeeding\" === true)\n    .drop(\"carSpeeding\")\n    .drop(\"maxspeed\")\n    .drop(\"timestamp\")\n    .show()\n    \ndf3.withColumn(\"speed\", ceil(($\"milepost\" - when((lag(\"milepost\", 1).over(windowSpec)).isNull, 0).otherwise(lag(\"milepost\", 1).over(windowSpec)))/\n                        (($\"timestamp\" - when((lag(\"timestamp\", 1).over(windowSpec)).isNull, 0).otherwise(lag(\"timestamp\", 1).over(windowSpec)))/3600)))\n    .withColumn(\"carSpeeding\", $\"speed\" > $\"maxspeed\")\n    .where($\"carSpeeding\" === true)\n    .drop(\"carSpeeding\")\n    .drop(\"maxspeed\")\n    .drop(\"timestamp\")\n    .show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-06-02T01:38:44+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+--------+-----+\n|numberplate|milepost|speed|\n+-----------+--------+-----+\n|     ZBZJ42|     275|  101|\n+-----------+--------+-----+\n\n+-----------+--------+-----+\n|numberplate|milepost|speed|\n+-----------+--------+-----+\n+-----------+--------+-----+\n\n+-----------+--------+-----+\n|numberplate|milepost|speed|\n+-----------+--------+-----+\n|     PAZD54|     150|  100|\n|     PAZD54|     250|  102|\n|     DJSS87|     250|  100|\n+-----------+--------+-----+\n\n\u001b[1m\u001b[34mwindowSpec\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.expressions.WindowSpec\u001b[0m = org.apache.spark.sql.expressions.WindowSpec@14fa0aac\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=280",
+              "$$hashKey": "object:2150"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=281",
+              "$$hashKey": "object:2151"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=282",
+              "$$hashKey": "object:2152"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=283",
+              "$$hashKey": "object:2153"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=284",
+              "$$hashKey": "object:2154"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=285",
+              "$$hashKey": "object:2155"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=286",
+              "$$hashKey": "object:2156"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=287",
+              "$$hashKey": "object:2157"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=288",
+              "$$hashKey": "object:2158"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=289",
+              "$$hashKey": "object:2159"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=290",
+              "$$hashKey": "object:2160"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=291",
+              "$$hashKey": "object:2161"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=292",
+              "$$hashKey": "object:2162"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=293",
+              "$$hashKey": "object:2163"
+            },
+            {
+              "jobUrl": "http://418e36d597fe:4040/jobs/job?id=294",
+              "$$hashKey": "object:2164"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597331026_98499905",
+      "id": "paragraph_1622564462151_902853608",
+      "dateCreated": "2021-06-02T01:28:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:445",
+      "dateFinished": "2021-06-02T01:38:47+0000",
+      "dateStarted": "2021-06-02T01:38:44+0000"
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2021-06-02T01:28:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1622597331026_355125495",
+      "id": "paragraph_1622574702183_1496622484",
+      "dateCreated": "2021-06-02T01:28:51+0000",
+      "status": "READY",
+      "$$hashKey": "object:446"
+    }
+  ],
+  "name": "Speeding_radar",
+  "id": "2G7A16U24",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Speeding_radar"
+}
