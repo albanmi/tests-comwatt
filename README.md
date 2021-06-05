@@ -10,7 +10,7 @@ Cloner le repository ou télécharger son contenu en zip et extraire les donnée
 
 `cd tests-comwatt/python/`
 
-L'exercice a été réalisé sur un jupyter notebook. Vous pouvez donc l'ouvrir soit en local si vous avez installé Jupyter soit en important le fichier *Yen_analysis.ipynb* sur Google Collab. Il est aussi possible de consulter le fichier directement sur [github](https://github.com/albanmi/tests-comwatt/blob/main/python/Yen_analysis.ipynb)
+L'exercice a été réalisé sur un jupyter notebook. Vous pouvez donc l'ouvrir soit en local si vous avez installé Jupyter soit en important le fichier "*Yen_analysis.ipynb*" sur Google Collab. Il est aussi possible de consulter le fichier directement sur [github](https://github.com/albanmi/tests-comwatt/blob/main/python/Yen_analysis.ipynb)
 
 
 
@@ -23,7 +23,7 @@ Cet exercice ci présente deux solutions en Scala.
 L'une utilisant un tableau Scala. L'autre utilise Scala pour manipuler un ***Spark SQL DataFrame*** et lancer des calculs sur un cluster, dans un container Docker.
 
 
-#### Command Line
+### Command Line
 
 `cd tests-comwatt/scala/commandLine/speeding-radar/`
 
@@ -40,7 +40,7 @@ Une fois **sbt** installé, tapez les commandes suivantes afin d'afficher la ré
 sbt:scala> run
 ```
 
-#### Zeppelin on Docker 
+### Zeppelin on Docker 
 
 `cd tests-comwatt/scala/zeppelin/`
 
@@ -54,4 +54,4 @@ Saisissez `docker-compose up` (avec `sudo` si nécessaire).
 
 Une fois le container créé, ouvrez n'importe quel navigateur et allez sur cette [URL](http://localhost:8080/).
 
-Il ne vous reste plus qu'à importer et ouvrir le notebook *notebooks/Speeding_radar.zpln*.
+Il ne vous reste plus qu'à importer et ouvrir le notebook "*notebooks/Speeding_radar.zpln*".
