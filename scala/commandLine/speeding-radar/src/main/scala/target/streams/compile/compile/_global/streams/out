@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/scala/Main.scala:1:8: not found: object upickle[0m
+[0m[[0m[31merror[0m] [0m[0mimport upickle.default._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/scala/Main.scala:45:20: not found: value os[0m
+[0m[[0m[31merror[0m] [0m[0m		val jsonString = os.read(os.pwd/"src"/"data"/file)[0m
+[0m[[0m[31merror[0m] [0m[0m		                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/scala/Main.scala:45:28: not found: value os[0m
+[0m[[0m[31merror[0m] [0m[0m		val jsonString = os.read(os.pwd/"src"/"data"/file)[0m
+[0m[[0m[31merror[0m] [0m[0m		                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/scala/Main.scala:46:14: not found: value ujson[0m
+[0m[[0m[31merror[0m] [0m[0m		var data = ujson.read(jsonString)[0m
+[0m[[0m[31merror[0m] [0m[0m		           ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

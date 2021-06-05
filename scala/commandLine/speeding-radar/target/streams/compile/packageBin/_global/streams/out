@@ -1,1 +1,9 @@
-[0m[[0m[0mdebug[0m] [0m[0mJar uptodate: /Users/Alban/devFolder/comwatt/scala/commandLine/speeding-radar/target/scala-2.13/speeding-radar_2.13-1.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/speeding-radar_2.13-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/classes/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
