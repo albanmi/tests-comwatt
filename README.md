@@ -54,4 +54,4 @@ Saisissez `docker-compose up` (avec `sudo` si nécessaire).
 
 Une fois le container créé, ouvrez n'importe quel navigateur et allez sur cette [URL](http://localhost:8080/).
 
-Il ne vous reste plus qu'à importer et ouvrir le notebook "*notebooks/Speeding_radar.zpln*".
+Il ne vous reste plus qu'à importer et ouvrir le notebook "*/notebooks/Speeding_radar.zpln*".
