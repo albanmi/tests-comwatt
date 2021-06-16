@@ -40,7 +40,7 @@ Une fois **sbt** installé, tapez les commandes suivantes afin d'afficher la ré
 sbt:scala> run
 ```
 
-### Zeppelin on Docker 
+### Zeppelin on a Docker 
 
 `cd tests-comwatt/scala/zeppelin/`
 
