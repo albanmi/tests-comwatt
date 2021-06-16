@@ -1,2 +1,4 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/resources/input1.txt,/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/classes/input1.txt)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/resources/input2.txt,/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/classes/input2.txt)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/resources/input3.txt,/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/target/scala-2.13/classes/input3.txt)[0m

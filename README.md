@@ -27,13 +27,13 @@ L'une utilisant un tableau Scala. L'autre utilise Scala pour manipuler un ***Spa
 
 `cd tests-comwatt/scala/commandLine/speeding-radar/`
 
-Vous trouverez les données dans "*/src/data/*".
+Vous trouverez les données dans "*/src/main/resources/*".
 
 Cette solution utilise [sbt](https://www.scala-sbt.org/download.html).
 
 Une fois **sbt** installé, tapez les commandes suivantes afin d'afficher la réponse au problème. (*sbt*, puis *run*)
 
-```bash
+```zsh
 % sbt
 
 [info] started sbt server

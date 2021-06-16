@@ -1,7 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/Alban/devFolder/comwatt/scala/commandLine/speeding-radar/src/main/scala/Main.scala:24:23: overloaded method apply with alternatives:[0m
-[0m[[0m[31merror[0m] [0m[0m  (arg: os.Path,charSet: scala.io.Codec,offset: Long,count: Int)String <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (arg: os.ReadablePath)String[0m
-[0m[[0m[31merror[0m] [0m[0m cannot be applied to (String)[0m
-[0m[[0m[31merror[0m] [0m[0m		val jsonString = os.read(os.pwd/"src"/"data"/"input"+k.toString+".json")[0m
-[0m[[0m[31merror[0m] [0m[0m		                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/Alban/devFolder/tests-comwatt/scala/commandLine/speeding-radar/src/main/scala/Main.scala:148:17: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : org.scalatest.Assertion[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  org.scalatest.compatible.Assertion[0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m	if(assertResult("ZBZJ42,275,101"){output1(0)}){[0m
+[0m[[0m[31merror[0m] [0m[0m	               ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
