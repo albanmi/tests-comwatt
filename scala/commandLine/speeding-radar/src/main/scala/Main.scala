@@ -77,7 +77,7 @@ object SpeedingRadar{
 
 	// Determine which car is speeding.
 	def isSpeeding(data : Seq[String]) : ListBuffer[String]={
-		var output =  new ListBuffer[String]()
+		val output =  new ListBuffer[String]()
 
 		val rangeOfRecords = 2 to data.length-1
 		
